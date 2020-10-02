@@ -1,5 +1,6 @@
 # RNAseq
 
+## hisat2.sh
 1. Alignment: Use the aligner HISAT2 to performspliced alignments to reference genome.
 a) output .sam from HISAT
 b) covert to .bam files 
