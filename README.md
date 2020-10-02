@@ -17,3 +17,6 @@ Assembling transcripts from merged bams: use stringtie to perform a reference gu
 
 [optional] Merging Transcripts from merged bams: If transcript discovery is performed on tumor/normal sample independently, we need to create a unified version of the transcriptome. Use The StringTie --merge option. 
 This can be used to compare transcripts using gffcompare tool (transcripts assembled by StringTie vs reference transcriptome).
+
+## estimate_abundance.sh
+Estimate abundance: abundance output will later be used for DE testing.
