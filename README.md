@@ -9,6 +9,7 @@ c) sort .bam files
 ## merge_bam.sh
 Merging bam files
 
+[optional] Post-alignment QC: use picard CollectRnaSeqMetrics and visualize in multiqc package.
 [optional] Indexing bam files: To view bam files in IGV, we need to index them
 
 ## stringtie.sh
