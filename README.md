@@ -12,7 +12,7 @@ Merging bam files
 [optional] Post-alignment QC: use picard CollectRnaSeqMetrics and visualize in multiqc package.
 [optional] Indexing bam files: To view bam files in IGV, we need to index them
 
-## stringtie.sh (optional)
+## assemble_transcripts.sh (optional)
 Assembling transcripts from merged bams: use stringtie to perform a reference guided transcriptome assembly and then determine transcript abundance estimates for those transcript. The so called “reference guided” mode is specified with -G ref_transcriptome.gtf. 
 
 ## merge_transcripts.sh (optional)
