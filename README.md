@@ -15,6 +15,7 @@ Merging bam files
 ## stringtie.sh (Skipped if I don't want to follow recommendation of stringtie)
 Assembling transcripts from merged bams: use stringtie to perform a reference guided transcriptome assembly and then determine transcript abundance estimates for those transcript. The so called “reference guided” mode is specified with -G ref_transcriptome.gtf. 
 
+## merge_transcripts.sh
 [optional] Merging Transcripts from merged bams: If transcript discovery is performed on tumor/normal sample independently, we need to create a unified version of the transcriptome. Use The StringTie --merge option. 
 This can be used to compare transcripts using gffcompare tool (transcripts assembled by StringTie vs reference transcriptome).
 
