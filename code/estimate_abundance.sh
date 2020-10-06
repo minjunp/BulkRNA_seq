@@ -5,7 +5,23 @@
 # -G <ref_ann.gff>: Use the reference annotation file (in GTF or GFF3 format) to guide the assembly process.
 # -A <gene_abund.tab>: Gene abundances will be reported (tab delimited format) in the output file with the given name.
 # -o <out_gtf>: output file name of the merged transcripts GTF  
+WORKING_DIR="/project/samee/minjun/RNAseq/code"
+BALLGOWN_DIR="/project/samee/minjun/RNAseq/code/ballgown"
+
+cd $BALLGOWN_DIR
+filenames="/project/samee/minjun/RNAseq/data/treatment.txt"
+for i in $(cat $filenames | cut -f1)
+do
+	mkdir -p RNAseq_$i
+	cd $WORKING_DIR/alignments
+	filename=$(ls ${i}*.bam)
+	cd $BALLGOWN_DIR	
+
+	stringtie -e -B -G $WORKING_DIR/transcripts/gffcmp.annotated.gtf -A RNAseq_${i}_abundance.out -o $BALLGOWN_DIR/RNAseq_${i}/${i}.gtf -p 8 $WORKING_DIR/alignments/${filename}
+done
+
 for i in Vehicle Lactate ARC Lactate_ARC
 do
-stringtie -p 8 -e -G /project/samee/minjun/RNAseq/code/reference/transcriptome/Homo_sapiens.GRCh38.101.gtf -o /project/samee/minjun/RNAseq/code/ballgown/${i}.gtf -A /project/samee/minjun/RNAseq/code/ballgown/${i}_abundances.tsv /project/samee/minjun/RNAseq/code/alignments/merged/${i}_merged.bam
+mkdir -p RNAseq_${i}_merged
+stringtie -e -B -G $WORKING_DIR/transcripts/gffcmp.annotated.gtf -A RNAseq_${i}_abundance.out -o $BALLGOWN_DIR/RNAseq_${i}_merged/${i}.gtf -p 8 $WORKING_DIR/alignments/merged/${i}_merged.bam
 done
