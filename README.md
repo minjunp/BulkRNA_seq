@@ -1,6 +1,6 @@
 # RNAseq
 
-## Code reference:
+## Code reference
 ```
 https://www.bioconductor.org/packages/devel/workflows/vignettes/rnaseqGene/inst/doc/rnaseqGene.html
 ```
