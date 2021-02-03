@@ -1,9 +1,8 @@
 # RNAseq
 
-"""
-Code reference:
+
+@Code reference:
 https://www.bioconductor.org/packages/devel/workflows/vignettes/rnaseqGene/inst/doc/rnaseqGene.html
-"""
 
 ## run_hisat2.sh
 Alignment: Use the aligner HISAT2 to performspliced alignments to reference genome.
